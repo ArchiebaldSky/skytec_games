@@ -10,20 +10,20 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @RequiredArgsConstructor
-public class MobFarmingService {
+public class MobFarmingService { //Пример реализации патерна producer-consumer
 
     private final PlayerService playerService;
-    private TaskService producers = new TaskService(5);
-    private TaskService consumers = new TaskService(5);
     private final GoldService goldService;
     private final Queue<Integer> enemiesOnLocation = new LinkedList<>();
-    private boolean isServerTernOn = true;
+    private TaskService producers = new TaskService(5);
+    private TaskService consumers = new TaskService(5);
     private ExecutorService executor = Executors.newSingleThreadExecutor();
+    private boolean isServerTernOn = true;
     private int maxSize = 10;
     private Random random = new Random();
 
     public void farm() {
-        executor.execute(() -> doWork());
+        executor.execute(this::doWork);
     }
 
     public void finish() {
@@ -36,7 +36,7 @@ public class MobFarmingService {
         while (isServerTernOn) {
             String mobSpawnMessage = "Mob has spawned on location.";
             String mobKillMessage = "Mob has been killed.";
-            producers.completeTask(() -> spawnMob(), mobSpawnMessage);
+            producers.completeTask(this::spawnMob, mobSpawnMessage);
             consumers.completeTask(() -> huntMob(playerService.getAnyPlayer()), mobKillMessage);
         }
     }
@@ -65,7 +65,9 @@ public class MobFarmingService {
                 }
             }
             Integer drop = enemiesOnLocation.poll();
-            goldService.transferGoldToUser(player, drop, "drop");
+            if (drop != null) {
+                goldService.transferGoldToUser(player, drop, "drop");
+            }
             enemiesOnLocation.notify();
         }
     }

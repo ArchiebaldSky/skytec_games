@@ -9,12 +9,12 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 @RequiredArgsConstructor
-public class StockExchangeService {
+public class StockExchangeService { //Второй пример реализации патерна producer-consumer
 
-    private TaskService producers = new TaskService(5);
-    private TaskService consumers = new TaskService(5);
     private final PlayerService playerService;
     private final GoldService goldService;
+    private TaskService producers = new TaskService(5);
+    private TaskService consumers = new TaskService(5);
     private boolean isServerTernOn;
     private ExecutorService executor = Executors.newSingleThreadExecutor();
     private Random random = new Random();
@@ -22,7 +22,7 @@ public class StockExchangeService {
     private Lock lock = new ReentrantLock();
 
     public void doAuction() {
-        executor.execute(() -> doWork());
+        executor.execute(this::doWork);
     }
 
     public void finish() {
@@ -55,7 +55,7 @@ public class StockExchangeService {
 
     private void saleLootFromAuction(Player player) {
         if (stock.isEmpty()) {
-            producers.completeTask(() -> putUpLootForAuction(), "Stock replenishment.");
+            producers.completeTask(this::putUpLootForAuction, "Stock replenishment.");
         }
         int value;
         try {

@@ -28,8 +28,4 @@ public class PlayerService {
         long id = keySequence.getAndIncrement();
         players.put(id, new Player(id, clanId, name, new AtomicInteger(0)));
     }
-
-    public Stream<Long> getPlayerIds() {
-        return players.keySet().stream();
-    }
 }

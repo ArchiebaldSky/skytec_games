@@ -18,10 +18,6 @@ public class TaskService {
         this.keySequence = new AtomicLong(1);
     }
 
-    private long getNewId() {
-        return keySequence.getAndIncrement();
-    }
-
     public void completeTask(Runnable task, String description) {
         long id = keySequence.getAndIncrement();
         LocalDateTime createdAt = LocalDateTime.now();
@@ -29,7 +25,7 @@ public class TaskService {
         executor.execute(() -> {
             task.run();
             taskModel.setCompletedAt(LocalDateTime.now());
-            System.out.println(taskModel.toString());
+            System.out.println(taskModel);
         });
     }
 

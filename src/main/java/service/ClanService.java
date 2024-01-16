@@ -21,10 +21,6 @@ public class ClanService {
         clans.put(id, new Clan(id, name, new AtomicInteger(0)));
     }
 
-    public Stream<Long> getClanIds(){
-        return clans.keySet().stream();
-    }
-
     public Clan getAnyClan(){
         if (clans.isEmpty()) {
             return null;
