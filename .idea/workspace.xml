@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="451981be-627f-4a5f-97a5-5a13a84554e0" name="Changes" comment="Удалены классы репозиториев">
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Clan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Clan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/MobFarmingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/MobFarmingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/PlayerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/StockExchangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/StockExchangeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/TaskService.java" afterDir="false" />
-    </list>
+    <list default="true" id="451981be-627f-4a5f-97a5-5a13a84554e0" name="Changes" comment="небольшой рефакторинг" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -206,7 +200,21 @@
       <option name="project" value="LOCAL" />
       <updated>1705444145365</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="небольшой рефакторинг">
+      <created>1705445123409</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705445123409</updated>
+    </task>
+    <task id="LOCAL-00005" summary="небольшой рефакторинг">
+      <created>1705445166753</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705445166753</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -224,7 +232,8 @@
     <MESSAGE value="Структурные элементы" />
     <MESSAGE value="Реализация многопоточного функционала." />
     <MESSAGE value="Удалены классы репозиториев" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удалены классы репозиториев" />
+    <MESSAGE value="небольшой рефакторинг" />
+    <option name="LAST_COMMIT_MESSAGE" value="небольшой рефакторинг" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
