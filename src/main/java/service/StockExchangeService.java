@@ -2,7 +2,6 @@ package service;
 
 import lombok.RequiredArgsConstructor;
 import model.Player;
-import repository.H2TaskRepository;
 
 import java.util.Random;
 import java.util.concurrent.*;
@@ -12,8 +11,8 @@ import java.util.concurrent.locks.ReentrantLock;
 @RequiredArgsConstructor
 public class StockExchangeService {
 
-    private TaskService producers = new TaskService(5, new H2TaskRepository());
-    private TaskService consumers = new TaskService(5, new H2TaskRepository());
+    private TaskService producers = new TaskService(5);
+    private TaskService consumers = new TaskService(5);
     private final PlayerService playerService;
     private final GoldService goldService;
     private boolean isServerTernOn;

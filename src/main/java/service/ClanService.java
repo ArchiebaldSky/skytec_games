@@ -1,6 +1,5 @@
 package service;
 
-import lombok.extern.slf4j.Slf4j;
 import model.Clan;
 
 import java.util.*;

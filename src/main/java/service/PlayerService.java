@@ -1,6 +1,5 @@
 package service;
 
-import model.Clan;
 import model.Player;
 
 import java.util.*;

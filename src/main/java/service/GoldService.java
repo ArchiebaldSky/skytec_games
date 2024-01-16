@@ -3,14 +3,13 @@ package service;
 import lombok.RequiredArgsConstructor;
 import model.Clan;
 import model.Player;
-import repository.H2TaskRepository;
 
 @RequiredArgsConstructor
 public class GoldService {
 
     private final ClanService clanService;
     private final PlayerService playerService;
-    private TaskService taskService = new TaskService(10, new H2TaskRepository());
+    private TaskService taskService = new TaskService(10);
 
     public void donateGoldToClan(Player player, int gold) {
         Clan clan = clanService.getClan(player.getClanId());

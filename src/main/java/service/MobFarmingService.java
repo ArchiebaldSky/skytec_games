@@ -2,21 +2,19 @@ package service;
 
 import lombok.RequiredArgsConstructor;
 import model.Player;
-import repository.H2TaskRepository;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 @RequiredArgsConstructor
 public class MobFarmingService {
 
     private final PlayerService playerService;
-    private TaskService producers = new TaskService(5, new H2TaskRepository());
-    private TaskService consumers = new TaskService(5, new H2TaskRepository());
+    private TaskService producers = new TaskService(5);
+    private TaskService consumers = new TaskService(5);
     private final GoldService goldService;
     private final Queue<Integer> enemiesOnLocation = new LinkedList<>();
     private boolean isServerTernOn = true;

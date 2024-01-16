@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="451981be-627f-4a5f-97a5-5a13a84554e0" name="Changes" comment="Структурные элементы">
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/MobFarmingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/PlayerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/StockExchangeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+    <list default="true" id="451981be-627f-4a5f-97a5-5a13a84554e0" name="Changes" comment="Реализация многопоточного функционала.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Clan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Clan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/H2ClanRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/H2Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/H2Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/repository/H2TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/repository/H2TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/H2Repository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/H2TaskRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/ClanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ClanService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/GoldService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/GoldService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/MobFarmingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/MobFarmingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/PlayerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/PlayerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/StockExchangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/StockExchangeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/TaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/statistics/ClanStatisticsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/statistics/StatisticsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/statistics/UserStatisticsService.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,10 +104,16 @@
       <recent name="D:\Proging\skytec_games\src\main" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.H2TaskRepository">
+    <configuration name="H2TaskRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="repository.H2TaskRepository" />
       <module name="skytec_games.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,21 +160,21 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="h2-2.1.212.jar" type="JarApplication" temporary="true">
+    <configuration name="h2-2.1.212.jar (1)" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.h2database/h2/2.1.212/f3187885395bd0c0e0e83f96641bb630f368ee2f/h2-2.1.212.jar!/" />
       <method v="2" />
     </configuration>
-    <configuration name="h2-2.2.224.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/src/main/resources/testdb/h2-2.2.224.jar" />
+    <configuration name="h2-2.1.212.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.h2database/h2/2.1.212/f3187885395bd0c0e0e83f96641bb630f368ee2f/h2-2.1.212.jar!/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.skytec_games [build]" />
         <item itemvalue="Gradle.skytec_games [clean]" />
+        <item itemvalue="Application.H2TaskRepository" />
+        <item itemvalue="JAR Application.h2-2.1.212.jar (1)" />
         <item itemvalue="JAR Application.h2-2.1.212.jar" />
-        <item itemvalue="JAR Application.h2-2.2.224.jar" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704979871683</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Реализация многопоточного функционала.">
+      <created>1705441829333</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1705441829334</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,7 +217,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Структурные элементы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Структурные элементы" />
+    <MESSAGE value="Реализация многопоточного функционала." />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализация многопоточного функционала." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

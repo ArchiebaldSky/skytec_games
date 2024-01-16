@@ -1,10 +1,7 @@
 package service;
 
-import lombok.RequiredArgsConstructor;
 import model.Task;
-import repository.H2TaskRepository;
 
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -15,12 +12,10 @@ public class TaskService {
 
     private final ExecutorService executor;
     private final AtomicLong keySequence;
-    private final H2TaskRepository repository;
 
-    public TaskService(int nThreads, H2TaskRepository repository) {
+    public TaskService(int nThreads) {
         this.executor = Executors.newFixedThreadPool(nThreads);
         this.keySequence = new AtomicLong(1);
-        this.repository = repository;
     }
 
     private long getNewId() {
@@ -34,11 +29,7 @@ public class TaskService {
         executor.execute(() -> {
             task.run();
             taskModel.setCompletedAt(LocalDateTime.now());
-            try {
-                repository.save(taskModel);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            System.out.println(taskModel.toString());
         });
     }
 
