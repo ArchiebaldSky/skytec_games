@@ -1,22 +1,16 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @Builder
 public class Task {
 
     private long id;
-    private Runnable task;
     private String description;
     private LocalDateTime createdAt;
     private LocalDateTime completedAt;
-    private int TTL; //Time to live (hours)
 }

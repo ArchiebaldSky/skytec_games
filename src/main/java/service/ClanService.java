@@ -2,47 +2,35 @@ package service;
 
 import lombok.extern.slf4j.Slf4j;
 import model.Clan;
-import repository.H2ClanRepository;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Stream;
 
-@Slf4j
 public class ClanService {
 
-    private H2ClanRepository repository;
+    private Map<Long, Clan> clans = new HashMap<>();
+    private AtomicLong keySequence = new AtomicLong(1);
 
     public Clan getClan(long clanId){
-        Clan clan = null;
-        try {
-            clan = repository.getById(clanId).orElseThrow(() -> new RuntimeException());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return clan;
+        return clans.get(clanId);
     }
 
     public void addClan(String name){
-        try {
-            repository.addClan(name);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        long id = keySequence.getAndIncrement();
+        clans.put(id, new Clan(id, name, new AtomicInteger(0)));
     }
 
-    public List<Long> getClanIds(){
-        List<Long> result = new ArrayList<>();
-
-        try {
-            result = repository.getClanIds();
-        } catch (SQLException e) {
-            log.error(String.valueOf(e));
-        }
-        return result;
+    public Stream<Long> getClanIds(){
+        return clans.keySet().stream();
     }
 
-    public void compareAndSet(int gold, int current){
-
+    public Clan getAnyClan(){
+        if (clans.isEmpty()) {
+            return null;
+        }
+        long randomKey = new Random().nextLong(clans.size());
+        return clans.get(randomKey + 1L);
     }
 }

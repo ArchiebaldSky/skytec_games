@@ -1,11 +1,15 @@
 package repository;
 
+import model.Task;
+
 import java.sql.*;
 import java.util.Optional;
 
-public interface H2Repository {
+public interface H2Repository<T> {
 
-    void save(String insertDataSQL) throws SQLException;
+    void save(T object) throws SQLException;
+
+
 
     Optional getById(long id) throws SQLException;
 }
