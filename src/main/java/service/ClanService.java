@@ -5,7 +5,6 @@ import model.Clan;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Stream;
 
 public class ClanService {
 
